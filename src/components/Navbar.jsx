@@ -1,24 +1,110 @@
-import React from 'react'
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { useState, useRef } from "react";
+import { Link } from "react-router-dom";
+
+const Links = [
+    [
+        "Home",
+        "/home"
+    ], [
+        "Agency",
+        "/agency"
+    ], [
+        "Expertise",
+        "/expertise"
+    ], [
+        "Project",
+        "/projects"
+    ], [
+        "People",
+        "/people"
+    ], [
+        "Blog",
+        "/blog"
+    ], [
+        "Contact",
+        "/contact"
+    ]
+]
+
 
 const Navbar = () => {
+    const [isOpened, setIsOpened] = useState(false);
+    const respo = useRef(null)
+
+    useGSAP(() => {
+        if (!isOpened) {
+            gsap.to(respo.current, {
+                left: `100%`,
+                // duration:0.3,
+                ease:"expo.inOut"
+            })
+        } else {
+            gsap.to(respo.current, {
+                left: `0%`,
+                // duration:0.3,
+                ease:"expo.inOut"
+
+            })
+        }
+    }, [isOpened])
+    function openHandler(e) {
+        if (isOpened) {
+            document.body.style.overflow = 'unset';
+            e.target.classList.add("rotate-45")
+            e.target.classList.remove("rotate-0")
+            setIsOpened(false)
+        } else {
+            document.body.style.overflow = 'hidden';
+            e.target.classList.remove("rotate-45")
+            e.target.classList.add("rotate-0")
+
+            setIsOpened(true)
+
+
+        }
+    }
     return (
         <>
-            <nav className='flex items-center fixed w-full justify-between sm:px-14 px-4 py-5 text-sm z-50' >
-                <div className=' lg:w-1/6 w-1/2 flex gap-2 rounded-full overflow-hidden' >
-                    <img className='h-12 scale-125 cursor-pointer' src="/F.png" alt="logo" />
+            <nav className='flex fixed items-center  w-full justify-between sm:px-14 px-4 py-5 text-sm z-50' >
+                <div className=' lg:w-1/6 w-1/3 flex gap-2 ' >
+                    <div className='rounded-full overflow-hidden'>
+                        <img className='h-12 scale-[130%] cursor-pointer' src="/F.png" alt="logo" />
+                    </div>
                 </div>
                 <ul className='lg:flex hidden font-medium   items-center justify-center gap-5 w-4/6' >
-                    <li className='cursor-pointer'>Home</li>
-                    <li className='cursor-pointer'>Agency</li>
-                    <li className='cursor-pointer'>Expertise</li>
-                    <li className='cursor-pointer'>Projects</li>
-                    <li className='cursor-pointer'>People</li>
-                    <li className='cursor-pointer'>Blog</li>
-                    <li className='cursor-pointer'>Contact</li>
+                    {
+                        Links.map((e) => (
+                            <a key={e[1]} href={`${e[1]}`}>
+                                <li className='cursor-pointer'>{e[0]}</li>
+                            </a>
+                        ))
+                    }
                 </ul>
-                <div className=' lg:w-1/6 w-1/2 gap-2 flex items-center justify-end'>
+                <div className=' lg:w-1/6 w-2/3 gap-2 flex items-center justify-end'>
                     <button className='bg-black text-white px-4 py-2 rounded-full cursor-pointer'>Hire Agency <i className="ri-arrow-right-line"></i></button>
-                    <i class="ri-menu-line lg:hidden text-3xl"></i>
+                    <i onClick={(e) => openHandler(e)} className="ri-close-line leading-none rotate-45 duration-200 lg:hidden text-3xl"></i>
+                </div>
+                <div ref={respo} className="respo h-screen w-screen bg-gray-200/45 backdrop-blur-xl absolute flex flex-col justify-between top-0 left-full -z-10">
+                    <ul className='font-medium  flex flex-col sm:pt-40 pt-32 px-10 text-xl uppercase gap-8 ' >
+                         {
+                        Links.map((e) => (
+                            <a key={e[1]} href={`${e[1]}`}>
+                                <li className='cursor-pointer border-b border-gray-400'>{e[0]}</li>
+                            </a>
+                        ))
+                    }
+                    </ul>
+                    <div className="px-10 pb-16 flex flex-col gap-2">
+                        <p className="text-lg font-semibold">Social Links</p>
+                        <div className="text-3xl flex gap-2">
+                            <i className="ri-instagram-line"></i>
+                            <i className="ri-facebook-circle-fill"></i>
+                            <i className="ri-twitter-x-line"></i>
+                            <i className="ri-linkedin-box-fill"></i>
+                        </div>
+                    </div>
                 </div>
 
             </nav>
