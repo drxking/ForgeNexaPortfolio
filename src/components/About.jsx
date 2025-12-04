@@ -24,7 +24,7 @@ const About = () => {
                         </div>
                     </div>
                     <div>
-                        <p className='text-[160px] text-[#BEFF01] font-semibold leading-none sm:ml-0 -ml-15 tracking-tighter'>about</p>
+                        <p className='md:text-[220px] text-[180px] text-[#BEFF01] font-semibold leading-none sm:ml-0 -ml-15 tracking-tighter'>about</p>
                     </div>
                 </div>
             </div>

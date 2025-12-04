@@ -12,9 +12,8 @@ const App = () => {
       <Navbar />
       <Main />
       <About />
-    
     </div>
   )
 }
 
-export default App
+export default App;
