@@ -2,18 +2,18 @@ import React from 'react'
 
 const About = () => {
     return (
-        <div className='min-h-screen flex gap-16 py-10'>
-            <div className=" w-1/2 ">
-                <div className='w-full h-full bg-gray-200'>
+        <div className='sm:min-h-screen sm:h-screen flex sm:flex-row flex-col gap-16 py-10 sm:px-0 pl-5'>
+            <div className="sm:w-1/2 sm:h-full h-96 ">
+                <div className='w-full h-full bg-gray-200 sm:rounded-none rounded-l-4xl'>
 
                 </div>
             </div>
-            <div className="right w-1/2 flex flex-col justify-end gap-7">
-                <h1 className='text-6xl font-semibold tracking-tight -ml-32' >
+            <div className="right sm:w-1/2 flex flex-col justify-end gap-7">
+                <h1 className='md:text-6xl text-5xl font-semibold tracking-tight sm:-ml-32' >
                     We create unique <br />
                     digital experiences.
                 </h1>
-                <p className='text-sm text-gray-500 font-medium w-96 tracking-tight leading-6'>
+                <p className='text-sm text-gray-500 font-medium md:w-96 w-full tracking-tight leading-6 sm:pr-4 pr-8'>
                     We are excited for our work and how it positively impacts clients. With over <span className='border-b text-black'>3 years of experience</span> we have been constantly providing excellent web solutions which is best in-class experience for our clients. We mainly focus on clients and their requirements.
                 </p>
                 <div className='flex gap-10'>
@@ -24,7 +24,7 @@ const About = () => {
                         </div>
                     </div>
                     <div>
-                        <p className='text-[16vw] text-[#BEFF01] font-semibold leading-none tracking-tighter'>about</p>
+                        <p className='text-[160px] text-[#BEFF01] font-semibold leading-none sm:ml-0 -ml-15 tracking-tighter'>about</p>
                     </div>
                 </div>
             </div>
