@@ -3,6 +3,7 @@ import Navbar from './components/Navbar'
 import Background from './components/Background'
 import RadialLines from './components/RadialLines'
 import Main from './components/Main'
+import About from './components/About'
 
 const App = () => {
   return (
@@ -10,6 +11,7 @@ const App = () => {
       <Background />
       <Navbar />
       <Main />
+      <About />
     
     </div>
   )
