@@ -44,7 +44,6 @@ const Navbar = () => {
         const handleScroll = () => {
             const currentScroll = window.scrollY;
             const navbar = navbarRef.current;
-            const logo = logoRef.current;
 
             // Hide/Show navbar on scroll
             if (currentScroll > prevScroll) {
@@ -54,18 +53,15 @@ const Navbar = () => {
             }
 
             // Change navbar style after scrolling past viewport height
-            if (currentScroll > window.innerHeight) {
-                gsap.to(navbar, { backgroundColor: "transparent", duration: 0.3 });
-                navbar.classList.add("text-white");
-                navbar.classList.remove("text-black");
-                gsap.to(logo, { filter: "invert(0)", duration: 0.3 });
-            } else {
-                gsap.to(navbar, { backgroundColor: "#fff", duration: 0.3 });
+            if (currentScroll == 0) {
+                gsap.to(navbar, { backgroundColor: "transparent", duration: 0.5});
                 navbar.classList.add("text-black");
                 navbar.classList.remove("text-white");
-                gsap.to(logo, { filter: "invert(1)", duration: 0.3 });
+            } else {
+                gsap.to(navbar, { backgroundColor: "#fff", duration: 0.5 });
+                navbar.classList.add("text-white");
+                navbar.classList.remove("text-white");
             }
-            console.log(currentScroll,window.innerHeight)
             setPrevScroll(currentScroll);
         };
 
@@ -111,7 +107,7 @@ const Navbar = () => {
     }
     return (
         <>
-            <nav ref={navbarRef} className='flex fixed items-center  w-full justify-between sm:px-14 px-4 py-5 text-sm z-50' >
+            <nav ref={navbarRef} className='flex  fixed items-center  w-full justify-between sm:px-14 px-4 py-5 text-sm z-50' >
                 <div className=' lg:w-1/6 w-1/3 flex gap-2 ' >
                     <div className='rounded-full overflow-hidden'>
                         <img ref={logoRef} className='h-12 scale-[130%] cursor-pointer' src="/F.png" alt="logo" />
