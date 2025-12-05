@@ -7,6 +7,7 @@ import About from './components/About'
 import Feature from './components/Feature'
 import { LenisProvider } from './utils/LenisProvider'
 import Lenis from 'lenis'
+import Projects from './components/Projects'
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
         <Main />
         <About />
         <Feature />
+        <Projects />
       </div>
     </LenisProvider>
   )
