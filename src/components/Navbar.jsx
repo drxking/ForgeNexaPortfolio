@@ -32,7 +32,7 @@ const Links = [
 const Navbar = () => {
     const [isOpened, setIsOpened] = useState(false);
     const respo = useRef(null)
-
+    const buttonRef = useRef(null);
 
 
 
@@ -54,7 +54,7 @@ const Navbar = () => {
 
             // Change navbar style after scrolling past viewport height
             if (currentScroll == 0) {
-                gsap.to(navbar, { backgroundColor: "transparent", duration: 0.5});
+                gsap.to(navbar, { backgroundColor: "transparent", duration: 0.5 });
                 navbar.classList.add("text-black");
                 navbar.classList.remove("text-white");
             } else {
@@ -89,17 +89,16 @@ const Navbar = () => {
         }
     }, [isOpened])
 
-    function openHandler(e) {
+    function openHandler() {
         if (isOpened) {
             document.body.style.overflow = 'unset';
-            e.target.classList.add("rotate-45")
-            e.target.classList.remove("rotate-0")
+            buttonRef.current.classList.add("rotate-45")
+            buttonRef.current.classList.remove("rotate-0")
             setIsOpened(false)
         } else {
             document.body.style.overflow = 'hidden';
-            e.target.classList.remove("rotate-45")
-            e.target.classList.add("rotate-0")
-
+            buttonRef.current.classList.remove("rotate-45")
+            buttonRef.current.classList.add("rotate-0")
             setIsOpened(true)
 
 
@@ -116,7 +115,7 @@ const Navbar = () => {
                 <ul className='lg:flex hidden font-medium   items-center justify-center gap-5 w-4/6' >
                     {
                         Links.map((e) => (
-                            <a key={e[1]} href={`${e[1]}`}>
+                            <a key={e[0]} href={`${e[1]}`}>
                                 <li className='cursor-pointer'>{e[0]}</li>
                             </a>
                         ))
@@ -124,13 +123,13 @@ const Navbar = () => {
                 </ul>
                 <div className=' lg:w-1/6 w-2/3 gap-2 flex items-center justify-end'>
                     <button className='bg-black text-white px-4 py-2 rounded-full cursor-pointer'>Hire Agency <i className="ri-arrow-right-line"></i></button>
-                    <i onClick={(e) => openHandler(e)} className="ri-close-line leading-none rotate-45 duration-200 lg:hidden text-3xl"></i>
+                    <i ref={buttonRef} onClick={openHandler} className="ri-close-line leading-none rotate-45 duration-200 lg:hidden text-3xl"></i>
                 </div>
                 <div ref={respo} className="respo h-screen w-screen bg-gray-200/45 backdrop-blur-xl absolute flex flex-col justify-between top-0 left-full -z-10">
                     <ul className='font-medium  flex flex-col sm:pt-40 pt-32 px-10 text-xl uppercase gap-8 ' >
                         {
                             Links.map((e) => (
-                                <a key={e[1]} href={`${e[1]}`}>
+                                <a onClick={openHandler} key={e[0]} href={`${e[1]}`}>
                                     <li className='cursor-pointer border-b border-gray-400'>{e[0]}</li>
                                 </a>
                             ))

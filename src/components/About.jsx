@@ -4,12 +4,12 @@ const About = () => {
     return (
         <section id='about' className='sm:min-h-screen sm:h-screen flex sm:flex-row flex-col gap-16 py-10 sm:px-0 pl-5'>
             <div className="sm:w-1/2 sm:h-full h-96 ">
-                <div className='w-full h-full bg-gray-200 sm:rounded-none rounded-l-4xl'>
-
+                <div className='w-full h-full bg-gray-200 sm:rounded-none rounded-l-4xl overflow-hidden'>
+                    <img className='h-full w-full object-cover  -z-10' src="https://images.pexels.com/photos/21545526/pexels-photo-21545526/free-photo-of-cloud-over-barren-rocks.jpeg" alt="Mount Everest Ain't Got Shit On Me" />
                 </div>
             </div>
             <div className="right sm:w-1/2 flex flex-col justify-end gap-7">
-                <h1 className='md:text-6xl text-5xl font-semibold tracking-tight sm:-ml-32' >
+                <h1 className='md:text-6xl text-5xl font-semibold tracking-tight sm:-ml-32 z-40' >
                     We create unique <br />
                     digital experiences.
                 </h1>
