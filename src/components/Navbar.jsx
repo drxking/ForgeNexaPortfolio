@@ -6,25 +6,25 @@ import { Link } from "react-router-dom";
 const Links = [
     [
         "Home",
-        "/home"
+        "#main"
     ], [
         "Agency",
-        "/agency"
+        "#about"
     ], [
         "Expertise",
-        "/expertise"
+        "#"
     ], [
         "Project",
-        "/projects"
+        "#projects"
     ], [
         "People",
-        "/people"
+        "#"
     ], [
         "Blog",
-        "/blog"
+        "#"
     ], [
         "Contact",
-        "/contact"
+        "#"
     ]
 ]
 

@@ -6,7 +6,7 @@ import { data } from '../data';
 const Projects = () => {
     let text = "Based on Nepal-Full Service Creative Web Design Agency-";
     return (
-        <div>
+        <section id='projects'>
             <div className="top py-4 overflow-hidden flex gap-10">
                 <div className="text flex">
                     <div className='relative sm:pt-0 pt-10 pr-20'>
@@ -63,7 +63,7 @@ const Projects = () => {
 
                 </div>
             </div>
-        </div>
+        </section>
     )
 }
 

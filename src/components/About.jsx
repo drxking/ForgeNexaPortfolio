@@ -2,7 +2,7 @@ import React from 'react'
 
 const About = () => {
     return (
-        <div className='sm:min-h-screen sm:h-screen flex sm:flex-row flex-col gap-16 py-10 sm:px-0 pl-5'>
+        <section id='about' className='sm:min-h-screen sm:h-screen flex sm:flex-row flex-col gap-16 py-10 sm:px-0 pl-5'>
             <div className="sm:w-1/2 sm:h-full h-96 ">
                 <div className='w-full h-full bg-gray-200 sm:rounded-none rounded-l-4xl'>
 
@@ -28,7 +28,7 @@ const About = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     )
 }
 

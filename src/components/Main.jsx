@@ -4,7 +4,7 @@ import MainFooter from './MainFooter'
 
 const Main = () => {
     return (
-        <div className='flex overflow-x-hidden  items-center relative h-screen justify-center'>
+        <section id='main' className='flex overflow-x-hidden  items-center relative h-screen justify-center'>
             <div className='absolute'>
                 <RadialLines />
             </div>
@@ -13,7 +13,7 @@ const Main = () => {
             <div className='absolute bottom-2'>
                 <MainFooter />
             </div>
-        </div>
+        </section>
     )
 }
 
