@@ -33,7 +33,7 @@ const Footer = () => {
                     <img className='h-12 w-12 scale-[130%] shrink-0 cursor-pointer m-4' src="/F.png" alt="logo" />
                     <div className='text-xs'>
                         <p className='text-right'>+977 9876543210</p>
-                        <p className='text-right border-b font-semibold'>forgenexa15@gmail.com</p>
+                        <p className='text-right border-b font-semibold'><a href="mailto:forgenexa15@gmail.com">forgenexa15@gmail.com</a></p>
                     </div>
                 </div>
             </div>
