@@ -2,31 +2,9 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
+import Links from '../utils/Links'
 
-const Links = [
-    [
-        "Home",
-        "#main"
-    ], [
-        "Agency",
-        "#about"
-    ], [
-        "Expertise",
-        "#"
-    ], [
-        "Project",
-        "#projects"
-    ], [
-        "People",
-        "#"
-    ], [
-        "Blog",
-        "#"
-    ], [
-        "Contact",
-        "#"
-    ]
-]
+
 
 
 const Navbar = () => {
@@ -77,13 +55,13 @@ const Navbar = () => {
             gsap.to(respo.current, {
                 left: `100%`,
                 // duration:0.3,
-                ease: "expo.inOut"
+                ease: "power2.out"
             })
         } else {
             gsap.to(respo.current, {
                 left: `0%`,
                 // duration:0.3,
-                ease: "expo.inOut"
+                ease: "power2.out"
 
             })
         }
@@ -92,13 +70,13 @@ const Navbar = () => {
     function openHandler() {
         if (isOpened) {
             document.body.style.overflow = 'unset';
-            buttonRef.current.classList.add("rotate-45")
-            buttonRef.current.classList.remove("rotate-0")
+            buttonRef.current.classList.add("-rotate-45")
+            buttonRef.current.classList.remove("rotate-180")
             setIsOpened(false)
         } else {
             document.body.style.overflow = 'hidden';
-            buttonRef.current.classList.remove("rotate-45")
-            buttonRef.current.classList.add("rotate-0")
+            buttonRef.current.classList.remove("-rotate-45")
+            buttonRef.current.classList.add("rotate-180")
             setIsOpened(true)
 
 

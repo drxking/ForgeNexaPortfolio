@@ -8,6 +8,7 @@ import Feature from './components/Feature'
 import { LenisProvider } from './utils/LenisProvider'
 import Lenis from 'lenis'
 import Projects from './components/Projects'
+import Footer from './components/Footer'
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
         <About />
         <Feature />
         <Projects />
+        <Footer />
       </div>
     </LenisProvider>
   )
