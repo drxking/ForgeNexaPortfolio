@@ -11,10 +11,10 @@ const BlogsList = () => {
                 </div>
             </div>
             <div className='grid md:grid-cols-4 grid-cols-2 gap-6 py-10'>
-                <BlogCard imgsrc={"https://i.pinimg.com/736x/d3/e0/f4/d3e0f4f99fcd71072d5372988a94c8c4.jpg"} date={"21 October 2024"}/>
-                <BlogCard imgsrc={"https://i.pinimg.com/736x/55/fd/86/55fd861501fccb8ba7a7b6ddafb6ced7.jpg"} date={"21 October 2024"}/>
-                <BlogCard imgsrc={"https://i.pinimg.com/1200x/25/b4/2d/25b42d975719938fad0dbfb2de15a275.jpg"} date={"21 October 2024"}/>
-                <BlogCard imgsrc={"https://i.pinimg.com/1200x/24/c9/38/24c9381b1a79672b5e276782c86a92ac.jpg"} date={"21 October 2024"}/>
+                <BlogCard imgsrc={"https://i.pinimg.com/736x/81/c2/d5/81c2d5db59757d2ab8f1730dc26a0165.jpg"} date={"21 October 2024"} title={"Decor"} desc={"The best influencers to follow for sartorial inspiration."}/>
+                <BlogCard imgsrc={"https://i.pinimg.com/736x/8a/b7/9c/8ab79c16de2db4d5f61f975ba4fdbdbd.jpg"} date={"21 October 2024"} title={"Design"} desc={"Everything you need to know about decor's big night out."}/>
+                <BlogCard imgsrc={"https://i.pinimg.com/1200x/70/95/b9/7095b95b99488947b47ec6fd186d1be1.jpg"} date={"21 October 2024"} title={"Development"} desc={"All the best looks & moments from the met gala 2023."}/>
+                <BlogCard imgsrc={"https://i.pinimg.com/1200x/fe/8f/fb/fe8ffbab478f3e22993d9a0d395611e2.jpg"} date={"21 October 2024"} title={"Test"} desc={"Find a colour palettes that reflects your passion."}/>
                 
             </div>
         </section>
@@ -25,19 +25,19 @@ export default BlogsList
 
 
 
-const BlogCard = ({ imgsrc, date }) => {
+const BlogCard = ({ imgsrc, date,title,desc }) => {
     return (
         <div>
             <div className='h-56 bg-gray-300 rounded-xl overflow-hidden'>
                 <img src={imgsrc} alt="imgsrc" className='h-full w-full object-cover'/>
             </div>
             <div className='flex pt-3 text-[10px] lg:text-xs gap-2 uppercase font-semibold'>
-                <p>Decor</p>
+                <p>{title}</p>
                 <p className='text-gray-500'>•</p>
                 <p className='text-gray-500 '>{date}</p>
             </div>
             <p className='text-xs font-semibold pt-3 text-gray-700'>
-                The best influencers to follow for sartorial inspiration.
+                {desc}
             </p>
         </div>
     )

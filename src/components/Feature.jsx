@@ -16,7 +16,7 @@ const FeaturesList = ({num,title,dets}) => {
   return (
     <>
       <div>
-        <p className='text-7xl font-semibold text-transparent text-this stroke-1 stroke-black'>{num}</p>
+        <p className='text-7xl font-semibold text-transparent text-this  stroke-black'>{num}</p>
         <div className='-mt-6 pl-10 flex flex-col gap-2'>
           <h1 className='capitalize text-sm font-bold'>{title}</h1>
           <p className='w-56 text-sm text-gray-500 leading-6'>{dets}</p>
