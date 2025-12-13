@@ -7,10 +7,10 @@ const Footer = () => {
         <div>
             <div className='overflow-x-hidden relative'>
                 <div className='absolute top-3 left-2/5 -translate-x-1/2'>
-                    <Three60 icon={"ri-number-1"} iconColor={"text-black font-extrabold"} innerBg={"bg-[#BEFF01] border-none"} outerBg={"bg-white all-shadow font-extrabold"} textColor={"text-black"} text={"Based on Nepal-Thousands of Engaging and Smooth Websites-"} />
+                    <Three60 icon={"ri-number-1"} iconColor={"text-black font-extrabold"} innerBg={"bg- border-none glow-div"} outerBg={"bg-white all-shadow font-extrabold "} textColor={"text-black"} text={"Based on Nepal-Thousands of Engaging and Smooth Websites-"} />
                 </div>
-                <h1 className='md:text-[250px] opacity-0 text-8xl sm:text-[180px] text-[#BEFF01] font-semibold leading-none tracking-tighter flex-nowrap text-nowrap py-10'>work together</h1>
-                <h1 className='md:text-[250px] text-8xl sm:text-[180px] -z-10 text-[#BEFF01] font-semibold leading-none tracking-tighter flex-nowrap text-nowrap absolute top-1/2 sm:left-1/2 left-4/6 -translate-x-1/2 -translate-y-1/2'><span className='text-black mr-6 sm:mr-16'>work</span>  together</h1>
+                <h1 className='md:text-[250px] opacity-0 text-8xl sm:text-[180px] text- font-semibold leading-none tracking-tighter flex-nowrap text-nowrap py-10'>work together</h1>
+                <h1 className='md:text-[250px] text-8xl sm:text-[180px] -z-10 text- font-semibold leading-none tracking-tighter flex-nowrap text-nowrap absolute top-1/2 sm:left-1/2 left-4/6 -translate-x-1/2 -translate-y-1/2 glow'><span className='text-black mr-6 sm:mr-16'>work</span>  together</h1>
             </div>
             <div className='flex   justify-between gap-10 md:px-28 px-5 lg:px-52 py-10 flex-wrap'>
                 <div className="left">

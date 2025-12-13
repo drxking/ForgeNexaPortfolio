@@ -16,7 +16,7 @@ export default  [
         "#"
     ], [
         "Blog",
-        "#"
+        "#blogs"
     ], [
         "Contact",
         "#"

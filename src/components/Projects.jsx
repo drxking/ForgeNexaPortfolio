@@ -11,16 +11,16 @@ const Projects = () => {
             <div className="top py-4 overflow-hidden flex gap-10">
                 <div className="text flex ">
                     <div className='relative  sm:pt-0 pt-10 pr-20'>
-                        <p className='md:text-[250px] text-8xl sm:text-[180px] text-[#BEFF01] font-semibold leading-none tracking-tighter -ml-6 sm:-ml-16'>projects</p>
-                        <div className='absolute top-0 right-0'>
-                            <Three60 icon={"ri-heart-3-fill"} iconColor={"text-[#BEFF01]"} outerBg={"bg-gray-800"} textColor={"text-white"} text={"Based on Nepal-Full Service Creative Web Design Agency-"} />
+                        <p className='md:text-[250px] text-8xl sm:text-[180px] text- font-semibold leading-none tracking-tighter -ml-6 sm:-ml-16 glow'>projects</p>
+                        <div className='absolute top-5 right-10'>
+                            <Three60 icon={"ri-heart-3-fill"} iconColor={"text- glow"} outerBg={"bg-gray-800"} textColor={"text-white"} text={"Based on Nepal-Full Service Creative Web Design Agency-"} />
                             
                         </div>
                     </div>
                 </div>
                 <div className='flex items-end '>
                     <div className='hidden items-center lg:flex '>
-                        <div className='bg-[#BEFF01] h-12 w-12 rounded-full'>
+                        <div className='glow-div h-12 w-12 rounded-full'>
 
                         </div>
                         <div className='text-xs font-bold -ml-4  uppercase'>

@@ -5,7 +5,7 @@ const About = () => {
         <section id='about' className='sm:min-h-screen sm:h-screen flex sm:flex-row flex-col gap-16 py-10 sm:px-0 pl-5'>
             <div className="sm:w-1/2 sm:h-full h-96 ">
                 <div className='w-full h-full bg-gray-200 sm:rounded-none rounded-l-4xl overflow-hidden'>
-                    <img className='h-full w-full object-cover  -z-10' src="https://images.pexels.com/photos/21545526/pexels-photo-21545526/free-photo-of-cloud-over-barren-rocks.jpeg" alt="Mount Everest Ain't Got Shit On Me" />
+                    <img className='h-full w-full object-cover  -z-10' src="https://i.pinimg.com/1200x/23/87/ac/2387ac839b319df509d2a9b0c75c52da.jpg" alt="Mount Everest Ain't Got Shit On Me" />
                 </div>
             </div>
             <div className="right sm:w-1/2 flex flex-col justify-end gap-7">
@@ -19,12 +19,12 @@ const About = () => {
                 <div className='flex gap-10'>
                     <div className='shrink-0'>
                         <div className='flex items-center'>
-                            <div className=' bg-[#BEFF01] rounded-full w-9 h-9'></div>
+                            <div className=' glow-div rounded-full w-9 h-9'></div>
                             <p className='uppercase text-xs font-semibold -ml-5'>About Agency</p>
                         </div>
                     </div>
                     <div>
-                        <p className='md:text-[220px] text-[180px] text-[#BEFF01] font-semibold leading-none sm:ml-0 -ml-15 tracking-tighter'>about</p>
+                        <p className='md:text-[220px] text-[180px] text- font-semibold leading-none sm:ml-0 -ml-15 tracking-tighter glow'>about</p>
                     </div>
                 </div>
             </div>

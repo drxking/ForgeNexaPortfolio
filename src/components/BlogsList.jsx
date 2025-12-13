@@ -2,11 +2,11 @@ import React from 'react'
 
 const BlogsList = () => {
     return (
-        <div className='px-4 sm:px-10 mt-10 lg:px-20 py-4'>
+        <section id='blogs' className='px-4 sm:px-10 mt-10 lg:px-20 py-4'>
             <div className='flex items-center justify-between'>
                 <p className='text-5xl text-gray-800 font-semibold'>Latest blogs</p>
                 <div className='flex items-center sm:mr-0 -mr-10'>
-                    <div className="circle bg-[#BEFF01] h-12 w-12 rounded-full"></div>
+                    <div className="circle bg- glow-div h-12 w-12 rounded-full"></div>
                     <p className='uppercase text-xs tracking-wide font-semibold -ml-5 text-balance'>Explore All Blogs</p>
                 </div>
             </div>
@@ -17,7 +17,7 @@ const BlogsList = () => {
                 <BlogCard imgsrc={"https://i.pinimg.com/1200x/24/c9/38/24c9381b1a79672b5e276782c86a92ac.jpg"} date={"21 October 2024"}/>
                 
             </div>
-        </div>
+        </section>
     )
 }
 

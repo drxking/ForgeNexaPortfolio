@@ -3,7 +3,7 @@ const RadialLines = ({
   lineCount = 80,
   radius = 250,
   centerGap = 60,     // space from center
-  stroke = "#bad44f",
+  stroke = "#9aabff",
   strokeWidth = 2,
   size = 500,
 }) => {
@@ -33,7 +33,7 @@ const RadialLines = ({
   }
 
   return (
-    <svg width={size} height={size} style={{ display: "block" }}>
+    <svg width={size}  height={size} style={{ display: "block" }}>
       {lines}
     </svg>
   );

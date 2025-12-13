@@ -15,7 +15,7 @@ const Three60 = ({text,innerBg,outerBg,icon,textColor,iconColor}) => {
                 })
             }
             <div className={`h-18 w-18 border ${innerBg} rounded-full flex items-center justify-center border-gray-700`}>
-                <i className={`${icon} ${iconColor} text-3xl `}></i>
+                <i className={`${icon} ${iconColor} text-3xl`}></i>
             </div>
         </div>
     )
