@@ -11,10 +11,14 @@ import Projects from './components/Projects'
 import Footer from './components/Footer'
 import BlogsList from './components/BlogsList'
 
+
 const App = () => {
+
+
+
   return (
     <LenisProvider>
-      <div className='relative min-h-screen overflow-x-hidden'>
+      <div className='relative min-h-screen shadow w-screen  overflow-x-hidden'>
         <Background />
         <Navbar />
         <Main />

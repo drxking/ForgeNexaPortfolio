@@ -1,9 +1,9 @@
 
 const RadialLines = ({
-  lineCount = 80,
+  lineCount = 70,
   radius = 250,
   centerGap = 60,     // space from center
-  stroke = "#9aabff",
+  stroke = "#9aabffaf",
   strokeWidth = 2,
   size = 500,
 }) => {

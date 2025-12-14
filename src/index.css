@@ -11,14 +11,17 @@
 
 .text-this {
   -webkit-text-stroke: 2px;
-
   -webkit-text-stroke-color: rgba(153, 153, 153, 0.200);
-  
+
 }
 
 
 html {
   scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar {
+  display: none;
 }
 
 .all-shadow {
@@ -34,31 +37,36 @@ html {
 
 .glow {
   color: transparent;
-  background: linear-gradient(
-    180deg,
-    #344ee0,
-    #2139BA,
-    #9aabff,
-    #2139BA
-  );
-  /* background-size: 100%; */
+  background: linear-gradient(180deg,
+      #344ee0,
+      #2139BA,
+      #9aabff,
+      transparent);
   padding: 20px;
   -webkit-background-clip: text;
   background-clip: text;
 
-  /* text-shadow:
-    0 0 10px rgba(255, 0, 128, 0.6),
-    0 0 20px rgba(64, 224, 208, 0.6),
-    0 0 40px rgba(123, 97, 255, 0.5); */
-
 }
 
-.glow-div{
-    background: linear-gradient(
-    180deg,
-    #344ee0,
-    #2139BA,
-    #9aabff,
-    #2139BA
-  ) !important;
+
+  /* background: linear-gradient(180deg,
+      #344ee0,
+      #2139BA,
+      #9aabff,
+      #2139BA); */
+
+.glow-div {
+  background: linear-gradient(180deg,
+      #344ee0,
+      #2139BA,
+      #9aabff,
+      #2139BA) !important;
+}
+
+*::selection {
+  background: #0a80ff2f;
+}
+
+*::-webkit-scrollbar{
+  display: none;
 }

@@ -25,9 +25,9 @@ const Navbar = () => {
 
             // Hide/Show navbar on scroll
             if (currentScroll > prevScroll) {
-                gsap.to(navbar, { y: "-100%", duration: 0.8 });
+                gsap.to(navbar, { y: "-100%", duration: 0.4 });
             } else {
-                gsap.to(navbar, { y: "0%", duration: 0.8 });
+                gsap.to(navbar, { y: "0%", duration: 0.4 });
             }
 
             // Change navbar style after scrolling past viewport height
@@ -66,6 +66,14 @@ const Navbar = () => {
             })
         }
     }, [isOpened])
+
+    useGSAP(()=>{
+        gsap.from(navbarRef.current,{
+      
+            opacity:0,
+            duration:1,
+        })
+    })
 
     function openHandler() {
         if (isOpened) {
