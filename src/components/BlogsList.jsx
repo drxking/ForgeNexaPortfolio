@@ -28,7 +28,7 @@ export default BlogsList
 const BlogCard = ({ imgsrc, date,title,desc }) => {
     return (
         <div>
-            <div className='h-56 bg-gray-300 rounded-xl overflow-hidden'>
+            <div className='lg::h-[15vw] md:h-[20vw] h-[35vw] bg-gray-300 rounded-xl overflow-hidden'>
                 <img src={imgsrc} alt="imgsrc" className='h-full w-full object-cover'/>
             </div>
             <div className='flex pt-3 text-[10px] lg:text-xs gap-2 uppercase font-semibold'>

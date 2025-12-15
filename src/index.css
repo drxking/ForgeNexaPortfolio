@@ -41,7 +41,7 @@ html::-webkit-scrollbar {
       #344ee0,
       #2139BA,
       #9aabff,
-      transparent);
+      #fff);
   padding: 20px;
   -webkit-background-clip: text;
   background-clip: text;
