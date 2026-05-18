@@ -1,0 +1,61 @@
+{
+  "baseCurrency": "USD",
+  "supportedCountries": [
+    { "country": "United States", "code": "US",  "currency": "USD", "symbol": "$",   "flag": "🇺🇸" },
+    { "country": "Australia",     "code": "AU",  "currency": "AUD", "symbol": "A$",  "flag": "🇦🇺" },
+    { "country": "India",         "code": "IN",  "currency": "INR", "symbol": "₹",   "flag": "🇮🇳" },
+    { "country": "Nepal",         "code": "NP",  "currency": "NPR", "symbol": "₨",   "flag": "🇳🇵" },
+    { "country": "Germany",       "code": "DE",  "currency": "EUR", "symbol": "€",   "flag": "🇩🇪" }
+  ],
+  "plans": [
+    {
+      "num": "01",
+      "tier": "Starter",
+      "price": 53.967,
+      "desc": "Best for small businesses, personal brands, and startups starting their online presence.",
+      "features": [
+        "Single page website design",
+        "Mobile-friendly responsive layout",
+        "Basic contact form",
+        "Basic SEO setup",
+        "Social media links integration",
+        "2 rounds of revisions",
+        "Delivery within 7 days"
+      ]
+    },
+    {
+      "num": "02",
+      "tier": "Business",
+      "price": 260,
+      "desc": "Suitable for growing businesses that need a professional website with multiple pages.",
+      "features": [
+        "Up to 5 page website design",
+        "Custom homepage design",
+        "Responsive across mobile, tablet, and desktop",
+        "Contact form with Google Maps",
+        "Basic SEO for each page",
+        "WhatsApp and social media integration",
+        "3 rounds of revisions",
+        "Delivery within 10 to 14 days"
+      ],
+      "highlight": true
+    },
+    {
+      "num": "03",
+      "tier": "Premium",
+      "price": "Custom",
+      "desc": "Made for established businesses that need advanced features and a strong digital presence.",
+      "features": [
+        "Custom page count",
+        "Custom animations and interactions",
+        "CMS or blog integration",
+        "Advanced SEO setup",
+        "Google Analytics integration",
+        "Payment gateway support",
+        "Business email setup guidance",
+        "Priority support",
+        "Delivery within 20 to 30 days"
+      ]
+    }
+  ]
+}

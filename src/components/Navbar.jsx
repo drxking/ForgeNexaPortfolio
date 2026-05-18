@@ -3,6 +3,7 @@ import gsap from "gsap";
 import { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Links from '../utils/Links'
+import CurrencySelector from './CurrencySelector'
 
 
 
@@ -108,7 +109,10 @@ const Navbar = () => {
                     }
                 </ul>
                 <div className=' lg:w-1/6 w-2/3 gap-2 flex items-center justify-end'>
-                    <button className='bg-black text-white px-4 py-2 rounded-full cursor-pointer'>Hire Agency <i className="ri-arrow-right-line"></i></button>
+                    <div className='hidden lg:block'>
+                        <CurrencySelector />
+                    </div>
+                    {/* <button className='bg-black text-white px-4 py-2 rounded-full cursor-pointer'>Hire Agency <i className="ri-arrow-right-line"></i></button> */}
                     <i ref={buttonRef} onClick={openHandler} className="ri-close-line leading-none rotate-45 duration-200 lg:hidden text-3xl"></i>
                 </div>
                 <div ref={respo} className="respo h-screen w-screen bg-gray-200/45 backdrop-blur-xl absolute flex flex-col justify-between top-0 left-full -z-10">
@@ -121,13 +125,19 @@ const Navbar = () => {
                             ))
                         }
                     </ul>
-                    <div className="px-10 pb-16 flex flex-col gap-2">
-                        <p className="text-lg font-semibold">Social Links</p>
-                        <div className="text-3xl flex gap-2">
-                            <i className="ri-instagram-line"></i>
-                            <i className="ri-facebook-circle-fill"></i>
-                            <i className="ri-twitter-x-line"></i>
-                            <i className="ri-linkedin-box-fill"></i>
+                    <div className="px-10 pb-16 flex flex-col gap-4">
+                        <div>
+                            <p className="text-xs uppercase tracking-wide font-semibold text-gray-500 mb-2">Currency</p>
+                            <CurrencySelector variant='mobile' />
+                        </div>
+                        <div>
+                            <p className="text-lg font-semibold">Social Links</p>
+                            <div className="text-3xl flex gap-2">
+                                <i className="ri-instagram-line"></i>
+                                <i className="ri-facebook-circle-fill"></i>
+                                <i className="ri-twitter-x-line"></i>
+                                <i className="ri-linkedin-box-fill"></i>
+                            </div>
                         </div>
                     </div>
                 </div>

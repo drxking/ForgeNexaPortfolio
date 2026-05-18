@@ -1,5 +1,7 @@
 import React from 'react'
 import Three60 from './Three60'
+import pricingData from '../data/pricing.json'
+import { useCurrency } from '../utils/CurrencyContext'
 
 const Pricing = () => {
     return (
@@ -40,55 +42,80 @@ const Pricing = () => {
                 </div>
 
                 <div className='grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6'>
-                    <PricingCard
-                        num={"01"}
-                        tier={"Starter"}
-                        price={"499"}
-                        desc={"Perfect for individuals and small brands stepping into the digital space."}
-                        features={[
-                            "Single page web design",
-                            "Responsive across devices",
-                            "Basic SEO setup",
-                            "2 rounds of revisions",
-                            "Delivery within 7 days",
-                        ]}
-                    />
-                    <PricingCard
-                        num={"02"}
-                        tier={"Professional"}
-                        price={"1,299"}
-                        desc={"For growing businesses ready to scale presence with a refined identity."}
-                        features={[
-                            "Up to 6 page web design",
-                            "Custom animations & interactions",
-                            "Advanced SEO & analytics",
-                            "CMS integration",
-                            "Unlimited revisions",
-                            "Priority delivery",
-                        ]}
-                        highlight={true}
-                    />
-                    <PricingCard
-                        num={"03"}
-                        tier={"Enterprise"}
-                        price={"Custom"}
-                        desc={"Tailored solutions for established brands demanding a unique digital ecosystem."}
-                        features={[
-                            "Unlimited pages & modules",
-                            "eCommerce & dashboards",
-                            "Dedicated project manager",
-                            "Custom integrations & APIs",
-                            "Ongoing maintenance",
-                            "24/7 priority support",
-                        ]}
-                    />
+                    {pricingData.plans.map((plan) => (
+                        <PricingCard
+                            key={plan.tier}
+                            num={plan.num}
+                            tier={plan.tier}
+                            price={plan.price}
+                            desc={plan.desc}
+                            features={plan.features}
+                            highlight={plan.highlight}
+                        />
+                    ))}
                 </div>
             </div>
         </section>
     )
 }
 
+const CONTACT_EMAIL = 'forgenexa15@gmail.com'
+
+const buildMailto = ({ tier, displayPrice, features }) => {
+    const isCustom = displayPrice == null
+    const subject = isCustom
+        ? `Premium Inquiry — Custom Plan | ForgeNexa`
+        : `Project Inquiry — ${tier} Plan (${displayPrice}) | ForgeNexa`
+
+    const featureLines = features.map((f) => `  • ${f}`).join('\n')
+
+    const body = isCustom
+        ? `Hi ForgeNexa team,
+
+I'd like to discuss a custom Premium engagement for my brand.
+
+Plan of interest: ${tier} (Custom pricing)
+
+The capabilities I'm specifically interested in:
+${featureLines}
+
+A bit about my project:
+  • Brand / Company:
+  • Project goal:
+  • Approximate timeline:
+  • Indicative budget:
+
+Could we schedule a discovery call to align on scope, deliverables and pricing?
+
+Thanks,`
+        : `Hi ForgeNexa team,
+
+I'd like to get started with the ${tier} plan (${displayPrice}).
+
+Here are the features from this plan that are most relevant to me:
+${featureLines}
+
+A bit about my project:
+  • Brand / Company:
+  • Project goal:
+  • Preferred start date:
+  • Anything else you should know:
+
+Please share the next steps to kick things off.
+
+Thanks,`
+
+    return `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+}
+
 const PricingCard = ({ num, tier, price, desc, features, highlight }) => {
+    const { format, currency, loading } = useCurrency()
+    const isCustom = price === 'Custom' || typeof price !== 'number'
+    const formatted = isCustom ? null : format(price)
+    const displayPrice = isCustom ? null : `${formatted.symbol}${formatted.value} ${formatted.code}`
+
+    const mailto = buildMailto({ tier, displayPrice, features })
+
     return (
         <div className={`relative rounded-2xl overflow-hidden p-8 flex flex-col gap-6 transition-all duration-300 ${highlight ? 'bg-gray-900 text-white' : 'bg-white border border-gray-200 text-black'}`}>
             {highlight && (
@@ -99,21 +126,23 @@ const PricingCard = ({ num, tier, price, desc, features, highlight }) => {
             )}
 
             <div>
-                <p className={`text-7xl font-semibold text-transparent text-this stroke-black ${highlight ? '' : ''}`}>{num}</p>
+                <p className='text-7xl font-semibold text-transparent text-this stroke-black'>{num}</p>
                 <div className='-mt-6 pl-10 flex flex-col gap-1'>
                     <h1 className='capitalize text-sm font-bold'>{tier}</h1>
                     <p className={`text-xs leading-5 w-56 ${highlight ? 'text-gray-400' : 'text-gray-500'}`}>{desc}</p>
                 </div>
             </div>
 
-            <div className='flex items-end gap-1 pt-2'>
-                {price === "Custom" ? (
+            <div className='flex items-end gap-1 pt-2 min-h-[72px]'>
+                {isCustom ? (
                     <p className='text-6xl font-semibold tracking-tight'>Custom</p>
+                ) : loading ? (
+                    <div className='h-12 w-32 bg-gray-200/40 rounded animate-pulse'></div>
                 ) : (
                     <>
-                        <p className='text-2xl font-semibold pb-2'>$</p>
-                        <p className='text-6xl font-semibold tracking-tight leading-none'>{price}</p>
-                        <p className={`text-xs pb-3 ${highlight ? 'text-gray-400' : 'text-gray-500'}`}>/ project</p>
+                        <p className='text-2xl font-semibold pb-2'>{formatted.symbol}</p>
+                        <p className='text-6xl font-semibold tracking-tight leading-none'>{formatted.value}</p>
+                        <p className={`text-xs pb-3 ${highlight ? 'text-gray-400' : 'text-gray-500'}`}>{formatted.code} / project</p>
                     </>
                 )}
             </div>
@@ -131,10 +160,13 @@ const PricingCard = ({ num, tier, price, desc, features, highlight }) => {
 
             <div className='flex-1'></div>
 
-            <button className={`mt-2 px-5 py-3 rounded-full text-sm font-medium cursor-pointer transition-all duration-300 flex items-center justify-center gap-2 ${highlight ? 'bg-white text-black hover:bg-gray-200' : 'bg-black text-white hover:bg-gray-800'}`}>
-                {price === "Custom" ? "Contact Sales" : "Get Started"}
+            <a
+                href={mailto}
+                className={`mt-2 px-5 py-3 rounded-full text-sm font-medium cursor-pointer transition-all duration-300 flex items-center justify-center gap-2 ${highlight ? 'bg-white text-black hover:bg-gray-200' : 'bg-black text-white hover:bg-gray-800'}`}
+            >
+                {isCustom ? 'Contact Sales' : 'Get Started'}
                 <i className="ri-arrow-right-line"></i>
-            </button>
+            </a>
         </div>
     )
 }
