@@ -12,6 +12,9 @@ export default  [
         "Project",
         "#projects"
     ], [
+        "Pricing",
+        "#pricing"
+    ], [
         "People",
         "#"
     ], [

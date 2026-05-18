@@ -94,9 +94,9 @@ const Navbar = () => {
         <>
             <nav ref={navbarRef} className='flex  fixed items-center  w-full justify-between sm:px-14 px-4 py-5 text-sm z-50' >
                 <div className=' lg:w-1/6 w-1/3 flex gap-2 ' >
-                    <div className='rounded-full overflow-hidden'>
+                    <Link to='/' className='rounded-full overflow-hidden'>
                         <img ref={logoRef} className='h-12 scale-[130%] cursor-pointer' src="/F.png" alt="logo" />
-                    </div>
+                    </Link>
                 </div>
                 <ul className='lg:flex hidden font-medium   items-center justify-center gap-5 w-4/6' >
                     {

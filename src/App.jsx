@@ -1,33 +1,16 @@
 import React from 'react'
-import Navbar from './components/Navbar'
-import Background from './components/Background'
-import RadialLines from './components/RadialLines'
-import Main from './components/Main'
-import About from './components/About'
-import Feature from './components/Feature'
+import { Routes, Route } from 'react-router-dom'
 import { LenisProvider } from './utils/LenisProvider'
-import Lenis from 'lenis'
-import Projects from './components/Projects'
-import Footer from './components/Footer'
-import BlogsList from './components/BlogsList'
-
+import Home from './pages/Home'
+import BlogPost from './pages/BlogPost'
 
 const App = () => {
-
-
-
   return (
     <LenisProvider>
-      <div className='relative min-h-screen shadow w-screen  overflow-x-hidden'>
-        <Background />
-        <Navbar />
-        <Main />
-        <About />
-        <Feature />
-        <Projects />
-        <BlogsList />
-        <Footer />
-      </div>
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/blog/:id' element={<BlogPost />} />
+      </Routes>
     </LenisProvider>
   )
 }
