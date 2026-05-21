@@ -4,21 +4,28 @@
       "id": "01",
       "name": "Sudip Acharya",
       "title": "Founder & Lead Developer",
-      "image": "",
+      "image": "/sudip.jpeg",
       "portfolio": "https://sudipacharya456.com.np"
     },
     {
       "id": "02",
       "name": "Saksham Shrestha",
-      "title": "Creative Director",
-      "image": "",
+      "title": "Frontend Developer",
+      "image": "/saksham.jpeg",
       "portfolio": "https://sakshamstha.com.np"
     },
     {
       "id": "03",
       "name": "Kripesh Pokhrel",
-      "title": "Cold Caller",
-      "image": "",
+      "title": "Backend Developer",
+      "image": "/kripesh.jpeg",
+      "portfolio": "https://kripesh999888.github.io/Kripesh-Portfolio/"
+    },
+    {
+      "id": "04",
+      "name": "Ekta Pokharel",
+      "title": "Project Manager",
+      "image": "/ekta.jpeg",
       "portfolio": ""
     }
   ]
