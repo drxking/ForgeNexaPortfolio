@@ -1,0 +1,25 @@
+{
+  "members": [
+    {
+      "id": "01",
+      "name": "Sudip Acharya",
+      "title": "Founder & Lead Developer",
+      "image": "",
+      "portfolio": "https://sudipacharya456.com.np"
+    },
+    {
+      "id": "02",
+      "name": "Saksham Shrestha",
+      "title": "Creative Director",
+      "image": "",
+      "portfolio": "https://sakshamstha.com.np"
+    },
+    {
+      "id": "03",
+      "name": "Kripesh Pokhrel",
+      "title": "Cold Caller",
+      "image": "",
+      "portfolio": ""
+    }
+  ]
+}

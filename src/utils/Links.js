@@ -7,7 +7,7 @@ export default  [
         "#about"
     ], [
         "Expertise",
-        "#"
+        "#features"
     ], [
         "Project",
         "#projects"
@@ -15,8 +15,8 @@ export default  [
         "Pricing",
         "#pricing"
     ], [
-        "People",
-        "#"
+        "Team",
+        "#team"
     ], [
         "Blog",
         "#blogs"

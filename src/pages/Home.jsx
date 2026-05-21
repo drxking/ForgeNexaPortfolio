@@ -6,6 +6,7 @@ import About from '../components/About'
 import Feature from '../components/Feature'
 import Projects from '../components/Projects'
 import Pricing from '../components/Pricing'
+import Team from '../components/Team'
 import BlogsList from '../components/BlogsList'
 import Footer from '../components/Footer'
 
@@ -19,6 +20,7 @@ const Home = () => {
             <Feature />
             <Projects />
             <Pricing />
+            <Team />
             <BlogsList />
             <Footer />
         </div>
