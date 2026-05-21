@@ -68,11 +68,11 @@ const Navbar = () => {
         }
     }, [isOpened])
 
-    useGSAP(()=>{
-        gsap.from(navbarRef.current,{
-      
-            opacity:0,
-            duration:1,
+    useGSAP(() => {
+        gsap.from(navbarRef.current, {
+
+            opacity: 0,
+            duration: 1,
         })
     })
 
@@ -109,7 +109,7 @@ const Navbar = () => {
                     }
                 </ul>
                 <div className=' lg:w-1/6 w-2/3 gap-2 flex items-center justify-end'>
-                    <div className='hidden lg:block'>
+                    <div className='block'>
                         <CurrencySelector />
                     </div>
                     {/* <button className='bg-black text-white px-4 py-2 rounded-full cursor-pointer'>Hire Agency <i className="ri-arrow-right-line"></i></button> */}
@@ -126,10 +126,6 @@ const Navbar = () => {
                         }
                     </ul>
                     <div className="px-10 pb-16 flex flex-col gap-4">
-                        <div>
-                            <p className="text-xs uppercase tracking-wide font-semibold text-gray-500 mb-2">Currency</p>
-                            <CurrencySelector variant='mobile' />
-                        </div>
                         <div>
                             <p className="text-lg font-semibold">Social Links</p>
                             <div className="text-3xl flex gap-2">
